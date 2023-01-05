@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <li><a id="user">로그인해주세요!</a></li>
+    <a style="cursor: pointer;" id="loginout" onclick="logoutUser()" data-toggle="modal" data-target="#login-modal"></a>
+
+    <div id="account_books">
+        로그인해주세요
+    </div>
+    <div class="pagenation-form">
+        <div class="pagenation">
+            <a id="prev" href="#"> < </a>
+            <span id="pagenumber">
+                <a id="1" href="#" class="active">1</a>
+                <a id="2" href="#">2</a>
+                <a id="3" href="#">3</a>
+                <a id="4" href="#">4</a>
+                <a id="5" href="#">5</a>
+                <a id="6" href="#">6</a>
+                <a id="7" href="#">7</a>
+            </span>
+            <a id="next" href="#"> > </a>
+        </div>
+    </div>
+    <a href="account_book_creat.html"><button>가계부 작성</button></a>
+</body>
+<script src="/js/data.js"></script>
+<script src="/js/index.js"></script>
+</html>
