@@ -25,17 +25,20 @@ window.onload = async function base() {
         var account_books = document.getElementById("account_books");
         $("#account_books").empty();
             const account_book = document.createElement('div')
-            account_book.innerHTML = `
+            account_book.innerHTML = `      <div id="accout_book">
                                             작성 날짜 :<td>${data["data"]["created_at"]}
                                             <p></p>
-                                            메모 :<td>${data["data"]["memo"]}</td>
+                                            메모 :<div >${data["data"]["memo"]}</div>
                                             <p></p>
                                             사용한 금액 :<td>${data["data"]["price"].toLocaleString('ko-KR')}원</td>
                                             <p></p>
+                                            </div>
                                             작성자 <div id="email">${data["data"]["user"]["email"]}</div>
                                             `
             account_books.appendChild(account_book)
         })
+        asd=document.getElementById("accout_book").innerText;
+        console.log(asd)
         
 }
 
@@ -97,3 +100,19 @@ async function remove() {
 }
 }
 }
+
+function copyToClipboard(val) {
+    var t = document.createElement("textarea");
+    document.body.appendChild(t);
+    t.value = val;
+    t.select();
+    document.execCommand('copy');
+    document.body.removeChild(t);
+    }
+
+    $('#copybtn1').click(function() {
+        asd=document.getElementById("accout_book").innerText;
+        console.log(asd)
+      copyToClipboard(asd);
+      alert('가계부를 복사하였습니다.');
+    });

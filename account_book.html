@@ -12,11 +12,13 @@
         로그인해주세요
     </div>
     변경할 금액:<input type="number" id="price1">
-    <p>
-    변경할 메모:<input type="text" id="memo1">
-    <p>
+    <p></p>
+    변경할 메모:<textarea style="width: 500px; height:150px; resize:none;" id="memo1" ></textarea>
+    <p></p>
     <button onclick="edit()">수정하기</button>
     <button onclick="remove()">삭제하기</button>
+    <button id="copybtn1" onclick="copyToClipboard();" title="주소 복사">가계부 복사</button>
+    <button id="copybtn2" onclick="copyToClipboard();" title="긴 글 복사">긴 글 복사</button>
 </body>
 <script src="/js/data.js"></script>
 <script src="/js/account_book.js"></script>

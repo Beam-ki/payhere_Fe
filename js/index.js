@@ -137,8 +137,8 @@ $(".pagenation a").click(function (e) {
 window.addEventListener('load', function() {
     account_book(1)  
 });
-async function account_book(){
-    const response= await fetch(`${BACK_END_URL}/account_book/accout_book_view/`,{
+async function account_book(page){
+    const response= await fetch(`${BACK_END_URL}/account_book/accout_book_view/?page=${page}`,{
         headers: {
             'content-type': 'application/json',
             "Authorization": "Bearer " + localStorage.getItem("access")
