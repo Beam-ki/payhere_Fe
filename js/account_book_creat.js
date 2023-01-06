@@ -6,7 +6,7 @@ window.onload = async function base() {
     const parsed_payload = JSON.parse(payload)
     if (!parsed_payload) {
         alert("권한이 없습니다. 로그인 해주세요")
-        location.replace("../index.html")
+        location.replace("../login.html")
     }
 }
 access_token = localStorage.getItem("access")

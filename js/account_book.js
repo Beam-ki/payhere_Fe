@@ -1,14 +1,13 @@
-let urlParameter = window.location.search;
-var account_book_id = urlParameter.split('=')[1]
-var account_book_id1 = account_book_id.split('/')[0]
 window.onload = async function base() {
     const payload = localStorage.getItem("payload")
     const parsed_payload = JSON.parse(payload)
     if (!parsed_payload) {
         alert("권한이 없습니다. 로그인 해주세요")
-        location.replace("../index.html")
+        location.replace("../login.html")
     }
-
+    let urlParameter = window.location.search;
+    var account_book_id = urlParameter.split('=')[1]
+    var account_book_id1 = account_book_id.split('/')[0]
 
 
 
@@ -43,6 +42,10 @@ window.onload = async function base() {
 }
 
 async function edit() {
+    let urlParameter = window.location.search;
+    var account_book_id = urlParameter.split('=')[1]
+    var account_book_id1 = account_book_id.split('/')[0]
+
     const payload = localStorage.getItem("payload")
     const parsed_payload = JSON.parse(payload)
 
@@ -78,6 +81,10 @@ async function edit() {
 }
 
 async function remove() {
+    let urlParameter = window.location.search;
+    var account_book_id = urlParameter.split('=')[1]
+    var account_book_id1 = account_book_id.split('/')[0]
+    
     var result =confirm("가계부를 삭제 하시겠습니까?");
     if(result){
     const payload = localStorage.getItem("payload")
