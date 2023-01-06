@@ -1,7 +1,6 @@
 let urlParameter = window.location.search;
 var account_book_id = urlParameter.split('=')[1]
 var account_book_id1 = account_book_id.split('/')[0]
-
 window.onload = async function base() {
     const payload = localStorage.getItem("payload")
     const parsed_payload = JSON.parse(payload)
@@ -9,6 +8,9 @@ window.onload = async function base() {
         alert("권한이 없습니다. 로그인 해주세요")
         location.replace("../index.html")
     }
+
+
+
 
 
     const account_book = await fetch(`${BACK_END_URL}/account_book/view/?account_book_id=${account_book_id1} `, {
@@ -37,8 +39,6 @@ window.onload = async function base() {
                                             `
             account_books.appendChild(account_book)
         })
-        asd=document.getElementById("accout_book").innerText;
-        console.log(asd)
         
 }
 
@@ -49,8 +49,7 @@ async function edit() {
     const email = document.getElementById("email").innerText;
     const price = document.getElementById("price1").value;
     const memo = document.getElementById("memo1").value;
-    console.log(email)
-    console.log(typeof(price))
+
     if (price == "" || memo== ""){
         alert("금액,메모는 공백으로 수정 할 수 없습니다.")
         location.reload();   
@@ -111,8 +110,7 @@ function copyToClipboard(val) {
     }
 
     $('#copybtn1').click(function() {
-        asd=document.getElementById("accout_book").innerText;
-        console.log(asd)
-      copyToClipboard(asd);
+        acoount_book_copy=document.getElementById("accout_book").innerText;
+      copyToClipboard(acoount_book_copy);
       alert('가계부를 복사하였습니다.');
     });

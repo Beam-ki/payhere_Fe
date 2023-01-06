@@ -17,9 +17,8 @@ if(access_token) {
 
 async function logoutUser() {
     localStorage.removeItem("access")
-    localStorage.removeItem("refresh")
     localStorage.removeItem("payload")
-    localStorage.removeItem("kakao")
+
 
     window.location.replace(`../login.html`);
 }
@@ -65,7 +64,7 @@ $(".pagenation a").click(function (e) {
     if ($id == "prev") selectedPage = now - 1;
     if ($id == "allprev") selectedPage = 1;
     if ($id == "allnext") selectedPage = totalPage;
-    console.log(selectedPage)
+
     if (selectedPage < firstPage){
         // $("#pagenumber").empty();
         for (i=0;i<7;i++){
@@ -153,7 +152,6 @@ async function account_book(page){
         maxnum = data["page"].total_page
         loadpagenation()
         $("#account_books").empty();
-        console.log(data)
         for (i = 0; i < data["data"].length; i++) {
             const account_book = document.createElement('div')
             account_book.innerHTML = `
